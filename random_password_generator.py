@@ -17,17 +17,21 @@ if not (uppercase or lowercase or numbers or special):
 char_pool = ""
 password_chars = []
 if uppercase:
-    char_pool += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    password_chars.append(random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    char_pool += chars
+    password_chars.append(random.choice(chars))
 if lowercase:
-    char_pool += "abcdefghijklmnopqrstuvwxyz"
-    password_chars.append(random.choice("abcdefghijklmnopqrstuvwxyz"))
+    chars = "abcdefghijklmnopqrstuvwxyz"
+    char_pool += chars
+    password_chars.append(random.choice(chars))
 if numbers:
-    char_pool += "0123456789"
-    password_chars.append(random.choice("0123456789"))
+    chars = "0123456789"
+    char_pool += chars
+    password_chars.append(random.choice(chars))
 if special:
-    char_pool += "!@#$%^&*()-_=+[]{}|;:',.<>?/`~"
-    password_chars.append(random.choice("!@#$%^&*()-_=+[]{}|;:',.<>?/`~"))
+    chars = "!@#$%^&*()-_=+[]{}|;:',.<>?/`~"
+    char_pool += chars
+    password_chars.append(random.choice(chars))
 
 remaining = length - len(password_chars)
 password_chars.extend(random.choice(char_pool) for _ in range(remaining))
